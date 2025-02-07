@@ -1,3 +1,4 @@
 *GhibliPlay.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 public/GhibliPlay.mp4 filter=lfs diff=lfs merge=lfs -text
+public/Sparkle1080.mp4 filter=lfs diff=lfs merge=lfs -text
