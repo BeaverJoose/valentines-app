@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Main container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hidden background video */
+.hidden-video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -5;
+}
+
+/* Video container */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+
+/* Transition video */
+.transition-video {
+  width: auto;
+  height: auto;
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Bursting hearts */
+.bursting-heart {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: url("./pics/falling-heart.png") no-repeat center;
+  background-size: contain;
+  animation: burst 2s ease-out forwards;
+  z-index: 10001;
+}
+
+.howls-background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 30, 30, 0.753);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -10; /* Lower the z-index to ensure it is behind text elements */
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) translate(50px, -50px);
+  }
+  100% {
+    transform: scale(0) translate(100px, -100px);
+    opacity: 0;
+  }
+}
+
+/* No Button */
+.no-button {
+  position: absolute;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Button Styles (Pixel Font & Retro Look) */
+.yes-button,
+.no-button,
+.restart-button {
+  background-color: #ff006e;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 20px 0 20px 500px; /* Adjust this value to move the text to the right */
+  border: none;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive; 
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.yes-button:hover {
+  background-color: #ff477e;
+}
+
+.no-button {
+  background-color: #333;
+  position: relative;
+}
+
+.restart-button {
+  background-color: #6c63ff;
+}
+
+.restart-button:hover {
+  background-color: #857cff;
+  transform: scale(1.05);
+}
+
+/* Apply Bobbing Animation to pixel-ask and pixel-heart */
+.pixel-image {
+  width: 220px; /* Adjust size if needed */
+  height: auto;
+  animation: bobble 1.5s infinite ease-in-out; /* 🔥 Bobbing Effect */
+}
+
+.image-container {
+  margin-left: 50px; /* Adjust this value to move the image to the right */
+  text-align: center;
+}
+
+/* Keyframes for Bobbing Effect */
+@keyframes bobble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Moves up slightly */
+  }
+}
+
+.bursting-heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('./pics/falling-heart.png'); /* Use your heart image */
+  background-size: cover;
+  animation: burst 2.5s ease-out forwards;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10; /* Ensure the video is behind other elements */
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out; /* Adjust duration to match the timeout */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.scribble-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Ensure the canvas is above other elements */
+  pointer-events: none; /* Disable pointer events by default */
+}
+
+.pencil-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff006e;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive; 
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1001; /* Ensure the button is above the canvas */
+}
+
+.pencil-button:hover {
+  background-color: #ff477e;
+}
+
+.pencil-enabled .scribble-canvas {
+  pointer-events: auto; /* Enable pointer events when pencil mode is active */
+}
+
+.pixel-text {
+  color: #20161b; /* Change this to your desired color */
+  font-size: 24px; /* Change this to your desired size */
+  text-align: center; /* Center the text */
+  margin: 20px 0 50px 200px; /* Add some margin */
+  font-family: 'Press Start 2P', cursive; /* Ensure the font family is consistent */
+}
+
+/* Final Page Elements */
+.final-image-container {
+  margin-left: 50px; /* Adjust this value to move the image to the right */
+}
+
+.final-text {
+  color: #18050d; /* Change this to your desired color */
+  font-size: 24px; /* Change this to your desired size */
+  text-align: left; /* Center the text */
+  margin: 20px 0 20px 50px; /* Adjust this value to move the text to the right */
+  font-family: "Playfair Display", serif;
+}
+
+.final-button-container {
+  display: flex;
+  justify-content: center; /* Center the restart button */
+  margin-left: 50px; /* Adjust this value to move the button container to the right */
+  margin-right: 50px; /* Add margin to the right */
+}
+
+/* Remove the refresh button styles */
+.final-refresh-button {
+  display: none;
+}
+
+.final-restart-button {
+  background-color: #6c63ff;
+}
+
+.final-restart-button:hover {
+  background-color: #857cff;
+  transform: scale(1.05);
+}
