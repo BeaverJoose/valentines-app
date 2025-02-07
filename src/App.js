@@ -35,8 +35,16 @@ function App() {
   const onReady = (event) => {
     // Access to player in all event handlers via event.target
     event.target.setVolume(20); // Set volume to 20%
-
+    event.target.mute(); // Mute the video initially
     event.target.playVideo();
+  };
+
+  const onStateChange = (event) => {
+    if (event.data === window.YT.PlayerState.PLAYING) {
+      event.target.unMute(); // Unmute the video when it starts playing
+    } else if (event.data === window.YT.PlayerState.PAUSED) {
+      event.target.playVideo(); // Ensure the video keeps playing if paused
+    }
   };
 
   const createSparkles = () => {
@@ -177,6 +185,7 @@ function App() {
           },
         }}
         onReady={onReady}
+        onStateChange={onStateChange} // Add this line
         className="hidden-video"
       />
 
