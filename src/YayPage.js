@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Confetti from "react-confetti";
 import PixelHeart from "./pics/pixel-heart.png"; // Importing the image directly
 import poems from "./poems"; // Import poems from the new file
-import FallingHeart from "./pics/falling-heart.png"; // Correct import path for falling-heart.png
 
 const FinalPage = ({ onRestart }) => {
   const howlsVideoRef = useRef(null);
