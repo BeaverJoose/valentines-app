@@ -48,24 +48,6 @@ function App() {
     }
   };
 
-  const createSparkles = () => {
-    const sparkleContainer = document.createElement("div");
-    sparkleContainer.className = "sparkle-container";
-    document.body.appendChild(sparkleContainer);
-
-    for (let i = 0; i < 100; i++) {
-      const sparkle = document.createElement("div");
-      sparkle.className = "sparkle";
-      sparkle.style.top = `${Math.random() * 100}%`;
-      sparkle.style.left = `${Math.random() * 100}%`;
-      sparkleContainer.appendChild(sparkle);
-    }
-
-    setTimeout(() => {
-      sparkleContainer.remove();
-    }, 2000); // Remove sparkles after 2 seconds
-  };
-
   useEffect(() => {
     const music = bgMusicRef.current;
     if (music) {
