@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.5651378c.css",
-    "main.js": "/static/js/main.c83d8f5e.js",
-    "static/js/488.0c625363.chunk.js": "/static/js/488.0c625363.chunk.js",
-    "static/media/pixel-ask.png": "/static/media/pixel-ask.e75221163ec747550251.png",
-    "index.html": "/index.html",
-    "main.5651378c.css.map": "/static/css/main.5651378c.css.map",
-    "main.c83d8f5e.js.map": "/static/js/main.c83d8f5e.js.map",
-    "488.0c625363.chunk.js.map": "/static/js/488.0c625363.chunk.js.map"
+    "main.css": "/valentines-app/static/css/main.5651378c.css",
+    "main.js": "/valentines-app/static/js/main.c87fe36f.js",
+    "static/js/488.0c625363.chunk.js": "/valentines-app/static/js/488.0c625363.chunk.js",
+    "static/media/pixel-ask.png": "/valentines-app/static/media/pixel-ask.e75221163ec747550251.png",
+    "index.html": "/valentines-app/index.html",
+    "main.5651378c.css.map": "/valentines-app/static/css/main.5651378c.css.map",
+    "main.c87fe36f.js.map": "/valentines-app/static/js/main.c87fe36f.js.map",
+    "488.0c625363.chunk.js.map": "/valentines-app/static/js/488.0c625363.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5651378c.css",
-    "static/js/main.c83d8f5e.js"
+    "static/js/main.c87fe36f.js"
   ]
 }
