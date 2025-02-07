@@ -9,8 +9,8 @@ const ValentinePage = ({ onYesClick, moveNoButton }) => {
   const [noButtonPosition, setNoButtonPosition] = useState(initialNoButtonPosition);
 
   useEffect(() => {
-    setNoButtonPosition(initialNoButtonPosition); // Reset position on every refresh
-  }, [initialNoButtonPosition]); // Add initialNoButtonPosition as a dependency
+    setNoButtonPosition({ left: '0px', top: '0px' }); // Reset position on every refresh
+  }, []); // Empty dependency array to run only once
 
   const startDrawing = (e) => {
     if (!pencilMode) return;
