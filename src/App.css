@@ -88,6 +88,12 @@
 .no-button {
   position: absolute;
   transition: transform 0.2s ease-in-out;
+  background-color: transparent; /* Make background transparent */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove any box shadow */
+  color: #333; /* Set text color to match the background */
 }
 
 /* Button Styles (Pixel Font & Retro Look) */
@@ -242,6 +248,27 @@
   text-align: center; /* Center the text */
   margin: 20px 0 50px 200px; /* Add some margin */
   font-family: 'Press Start 2P', cursive; /* Ensure the font family is consistent */
+}
+
+.pixel-text-music {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0e0107;
+  z-index: 10;
+  pointer-events: none;
+  font-family: 'Press Start 2P', cursive; /* Use the same font as the pixel text */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.pixel-text-music.top-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 /* Final Page Elements */

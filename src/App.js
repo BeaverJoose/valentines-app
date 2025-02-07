@@ -131,6 +131,9 @@ function App() {
 
   return (
     <div className="app-container" onClick={handlePlayMusic}>
+      {/* Pixel Text for Music Instruction */}
+      <div className="pixel-text-music top-left" onClick={handlePlayMusic}>Click for music</div>
+
       {/* 🎵 Background Music */}
       <video id="bg-music" loop className="hidden-video" ref={bgMusicRef}>
         <source src="/GhibliPlay.mp4" type="video/mp4" />
