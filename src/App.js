@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import React from 'react';
 import "./App.css";
 import ValentinePage from "./ValentinePage";
 import TransitionVideo from "./TransitionVideo";
