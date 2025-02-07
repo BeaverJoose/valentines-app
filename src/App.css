@@ -50,7 +50,7 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  background: url("./pics/falling-heart.png") no-repeat center;
+  background: url("${process.env.PUBLIC_URL}/pics/falling-heart.png") no-repeat center; /* Update this line */
   background-size: contain;
   animation: burst 2s ease-out forwards;
   z-index: 10001;
@@ -155,7 +155,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  background-image: url('./pics/falling-heart.png'); /* Use your heart image */
+  background-image: url('${process.env.PUBLIC_URL}/pics/falling-heart.png'); /* Use your heart image */
   background-size: cover;
   animation: burst 2.5s ease-out forwards;
 }
@@ -195,7 +195,7 @@
 }
 
 .fade-out {
-  animation: fadeOut 0.5s ease-in-out; /* Adjust duration to match the timeout */
+  animation: fadeOut 1s ease-in-out; /* Increase duration to 1s for smoother transition */
 }
 
 @keyframes fadeOut {

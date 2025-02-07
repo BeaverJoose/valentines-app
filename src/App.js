@@ -169,7 +169,7 @@ function App() {
 
       {/* 🌌 Background Video */}
       <video autoPlay loop muted className="background-video">
-        <source src={`${process.env.PUBLIC_URL}/HowlWall.mp4`} type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL}/HowlWall.mp4`} type="video/mp4" /> {/* Update this line */}
       Your browser does not support the video element.
       </video>
 

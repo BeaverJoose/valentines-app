@@ -32,7 +32,7 @@ const TransitionVideo = ({ onTransitionEnd }) => {
   return (
     <div className="video-container fade-in">
       <video autoPlay playsInline muted className="transition-video" ref={transitionVideoRef}>
-        <source src="/HowlMontage.mp4" type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL}/HowlMontage.mp4`} type="video/mp4" /> {/* Update this line */}
       </video>
       <div className="falling-hearts-container"></div> {/* 💖 Hearts during transition */}
     </div>
