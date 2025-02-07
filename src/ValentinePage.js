@@ -1,17 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PixelAsk from "./pics/pixel-ask.png"; // Default ask image
 
-const ValentinePage = ({ onYesClick, noButtonPosition, moveNoButton }) => {
+const ValentinePage = ({ onYesClick, moveNoButton }) => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [pencilMode, setPencilMode] = useState(false);
+  const initialNoButtonPosition = { left: '0px', top: '0px' }; // Initial position next to the yes button
+  const [noButtonPosition, setNoButtonPosition] = useState(initialNoButtonPosition);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-    context.lineCap = 'round';
-    context.lineWidth = 5;
-    context.strokeStyle = 'red';
+    setNoButtonPosition(initialNoButtonPosition); // Reset position on every refresh
   }, []);
 
   const startDrawing = (e) => {
@@ -52,13 +50,19 @@ const ValentinePage = ({ onYesClick, noButtonPosition, moveNoButton }) => {
           className="pixel-image"
         />
       </div>
-      <p className="pixel-text">Will you be my Valentine?</p>
+      <p className="pixel-text">
+        Avalon<br />
+        Will you be my Valentine?
+      </p>
       <div className="button-container">
         <button className="yes-button" onClick={onYesClick}>Yes 🥰</button>
         <button
           className="no-button"
           style={{ transform: `translate(${noButtonPosition.left}, ${noButtonPosition.top})` }}
-          onMouseEnter={moveNoButton}
+          onMouseEnter={() => {
+            moveNoButton();
+            setNoButtonPosition({ left: `${Math.random() * 300}px`, top: `${Math.random() * 300}px` }); // Increase movement range
+          }}
         >
           No 😢
         </button>

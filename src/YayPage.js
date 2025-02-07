@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Confetti from "react-confetti";
 import PixelHeart from "./pics/pixel-heart.png"; // Importing the image directly
 import poems from "./poems"; // Import poems from the new file
+import FallingHeart from "./pics/falling-heart.png"; // Correct import path for falling-heart.png
 
 const FinalPage = ({ onRestart }) => {
   const howlsVideoRef = useRef(null);
@@ -27,7 +28,6 @@ const FinalPage = ({ onRestart }) => {
     <>
       <div className="cinema-overlay"></div> {/* 🔥 Dark Overlay */}
       <Confetti numberOfPieces={200} gravity={0.005} /> {/* Adjust gravity to make confetti fall slower */}
-      <div className="falling-hearts-container"></div>
       <div className="image-container fade-in final-image-container">
         <img
           src={PixelHeart}

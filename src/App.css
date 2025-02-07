@@ -50,7 +50,7 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  background: url("${process.env.PUBLIC_URL}/pics/falling-heart.png") no-repeat center; /* Update this line */
+  background: url("./pics/falling-heart.png") no-repeat center; /* Update this line */
   background-size: contain;
   animation: burst 2s ease-out forwards;
   z-index: 10001;
@@ -103,7 +103,7 @@
   color: white;
   padding: 10px 20px;
   font-size: 18px;
-  margin: 20px 0 20px 500px; /* Adjust this value to move the text to the right */
+  margin: 20px 0 20px 300px; /* Adjust this value to move the text to the right */
   border: none;
   cursor: pointer;
   font-family: 'Press Start 2P', cursive; 
@@ -118,6 +118,7 @@
 .no-button {
   background-color: #333;
   position: relative;
+  margin-right: 120px;
 }
 
 .restart-button {
@@ -132,6 +133,7 @@
 /* Apply Bobbing Animation to pixel-ask and pixel-heart */
 .pixel-image {
   width: 220px; /* Adjust size if needed */
+  margin-left: 120px;
   height: auto;
   animation: bobble 1.5s infinite ease-in-out; /* 🔥 Bobbing Effect */
 }
@@ -155,7 +157,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  background-image: url('${process.env.PUBLIC_URL}/pics/falling-heart.png'); /* Use your heart image */
+  background-image: url('./pics/falling-heart.png'); /* Use your heart image */
   background-size: cover;
   animation: burst 2.5s ease-out forwards;
 }
