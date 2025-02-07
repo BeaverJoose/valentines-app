@@ -2,12 +2,12 @@
   "name": "valentines-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://BeaverJoose.github.io/valentines-app",
+  "homepage": "https://scintillating-jelly-3e55ce.netlify.app",
   "dependencies": {
     "cra-template": "1.2.0",
-    "react": "^19.0.0",
+    "react": "^18.2.0",
     "react-confetti": "^6.2.2",
-    "react-dom": "^19.0.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "react-youtube": "^10.1.0",
     "web-vitals": "^4.2.4"
@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "clean": "rimraf node_modules build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +41,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.21.0",
-    "babel-plugin-transform-optional-chaining": "^7.0.0-beta.3"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "babel-plugin-transform-optional-chaining": "^7.0.0-beta.3",
+    "rimraf": "^3.0.2"
   }
 }

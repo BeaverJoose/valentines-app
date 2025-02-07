@@ -66,11 +66,6 @@ function App() {
     }, 2000); // Remove sparkles after 2 seconds
   };
 
-  const handleYesButtonClick = () => {
-    createSparkles();
-    // Additional logic for when "Yes" button is clicked
-  };
-
   useEffect(() => {
     const music = bgMusicRef.current;
     if (music) {
@@ -192,8 +187,8 @@ function App() {
 
       {/* 🌌 Background Video */}
       <video autoPlay loop muted className="background-video">
-        <source src="/HowlWall.mp4" type="video/mp4" />
-        Your browser does not support the video element.
+        <source src={`${process.env.PUBLIC_URL}/HowlWall.mp4`} type="video/mp4" />
+      Your browser does not support the video element.
       </video>
 
       {/* Valentine Page */}

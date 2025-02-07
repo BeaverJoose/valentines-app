@@ -43,7 +43,7 @@ const ValentinePage = ({ onYesClick, noButtonPosition, moveNoButton }) => {
   return (
     <div className={`valentine-page ${pencilMode ? 'pencil-enabled' : ''}`}>
       <video autoPlay loop muted className="background-video">
-        <source src="/HowlWall.mp4" type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL}/HowlWall.mp4`} type="video/mp4" />
       </video>
       <div className="image-container">
         <img
