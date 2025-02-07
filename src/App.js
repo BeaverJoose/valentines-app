@@ -4,6 +4,8 @@ import ValentinePage from "./ValentinePage";
 import TransitionVideo from "./TransitionVideo";
 import FinalPage from "./YayPage";
 import poems from "./poems";
+import YouTube from 'react-youtube';
+
 
 function App() {
   const [showValentinePage, setShowValentinePage] = useState(true);
@@ -28,6 +30,36 @@ function App() {
         console.error("Autoplay blocked:", error);
       });
     }
+  };
+
+  const onReady = (event) => {
+    // Access to player in all event handlers via event.target
+    event.target.setVolume(20); // Set volume to 20%
+
+    event.target.playVideo();
+  };
+
+  const createSparkles = () => {
+    const sparkleContainer = document.createElement("div");
+    sparkleContainer.className = "sparkle-container";
+    document.body.appendChild(sparkleContainer);
+
+    for (let i = 0; i < 100; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.top = `${Math.random() * 100}%`;
+      sparkle.style.left = `${Math.random() * 100}%`;
+      sparkleContainer.appendChild(sparkle);
+    }
+
+    setTimeout(() => {
+      sparkleContainer.remove();
+    }, 2000); // Remove sparkles after 2 seconds
+  };
+
+  const handleYesButtonClick = () => {
+    createSparkles();
+    // Additional logic for when "Yes" button is clicked
   };
 
   useEffect(() => {
@@ -135,10 +167,18 @@ function App() {
       <div className="pixel-text-music top-left" onClick={handlePlayMusic}>Click for music</div>
 
       {/* 🎵 Background Music */}
-      <video id="bg-music" loop className="hidden-video" ref={bgMusicRef}>
-        <source src="/GhibliPlay.mp4" type="video/mp4" />
-        Your browser does not support the video element.
-      </video>
+      <YouTube
+        videoId="6dLWFa0UBiU"
+        opts={{
+          playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: '6dLWFa0UBiU',
+          },
+        }}
+        onReady={onReady}
+        className="hidden-video"
+      />
 
       {/* 🌌 Background Video */}
       <video autoPlay loop muted className="background-video">

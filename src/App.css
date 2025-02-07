@@ -100,7 +100,7 @@
 .yes-button,
 .no-button,
 .restart-button {
-  background-color: #ff006e;
+  background-color: #75bcf7;
   color: white;
   padding: 10px 20px;
   font-size: 18px;
@@ -303,4 +303,19 @@
 .final-restart-button:hover {
   background-color: #857cff;
   transform: scale(1.05);
+}
+
+.pixel-text-music {
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.pixel-text-music:hover {
+  color: lightgrey;
+  transform: scale(1.1);
+}
+
+.pixel-text-music:active {
+  color: grey;
+  transform: scale(0.9);
 }
